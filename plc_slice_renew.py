@@ -69,11 +69,12 @@ def main(argv=None):
     parser.add_option("-u", "--url", help="PLCAPI URL (default: %s)" % PLCAPI_URL, 
                       default=PLCAPI_URL)
     parser.add_option("-p", "--password", 
-                      help = "PLC password or file containing PLC password (default: prompt)")
+                      help="PLC password or file containing PLC password (default: prompt)")
     parser.add_option("-s", "--slice", 
-                      help = "Slice name (default: some slice)")
-    parser.add_option("-d", "--days", 
-                      help = "Days to renew (default: %d)" % RENEW_DAYS_DEFAULT,
+                      help="Slice name (default: some slice)")
+    parser.add_option("-d", "--days",
+                      type='int',
+                      help="Days to renew (default: %d)" % RENEW_DAYS_DEFAULT,
                       default=RENEW_DAYS_DEFAULT)
     
     opts, args = parser.parse_args()
